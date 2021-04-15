@@ -18,16 +18,29 @@
 					class="btn btn-danger btn-lg font-weight-bold position-absolute"
 					style="top: 200px; left: 380px; border-radius: 25px;">Inscribir</a>
 			</div>
-			<div class="col-6 m-0 p-0">
-				<img src="/media/imagen_plan.png" class="img-fluid w-100" alt="" srcset=""
-					style="mix-blend-mode: luminosity; opacity: 0.8; z-index:-1; position: absolute; height: 300px;">
-				<a href="#" class="btn btn-light btn-lg font-weight-bold position-absolute"
-					style="top: 200px; left: 20px; border-radius: 25px;">Ver inscripciones</a>
-
+			<div>	<a href="{% url 'carrera:registrar_carrera' %}" class="btn btn-danger btn-lg font-weight-bold position-absolute"
+				style="top: 200px; left: 380px; border-radius: 25px;">Registrar Carrera</a>
 			</div>
+		
 		</div>
 	</div>
+	<div class="container d-flex flex-column pt-5" style="height:400px;">
+		<div class="row">
+			<div class="col-6 m-0 p-0">
 
+				<div>	<a href="{% url 'pilotokart:registrar_piloto_kart' %}" class="btn btn-danger btn-lg font-weight-bold position-absolute"
+					style="top: 200px; left: 380px; border-radius: 25px;">Registrar Piloto de Karting</a>
+				</div>
+				<div class="col-6 m-0 p-0">
+					<img src="/media/imagen_plan.png" class="img-fluid w-100" alt="" srcset=""
+						style="mix-blend-mode: luminosity; opacity: 0.8; z-index:-1; position: absolute; height: 300px;">
+					<a href="#" class="btn btn-light btn-lg font-weight-bold position-absolute"
+						style="top: 200px; left: 20px; border-radius: 25px;">Ver inscripciones</a>
+	
+				</div>
+			</div>
+		</div>	
+	</div>
 
 	<div class="container d-flex flex-column align-items-center justify-content-center pt-5">
 		<h2 class="text-center text-white font-weight-bold" style="font-size: 36px;">FUNCIONAMIENTO Y SERVICIOS</h2>

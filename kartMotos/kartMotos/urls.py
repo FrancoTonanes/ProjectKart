@@ -19,6 +19,8 @@ urlpatterns = [
     path('Logout',auth.LogoutView.as_view(),name="logout"),
 
     #Url de las apps
-    path('usuarios/',include('apps.usuarios.urls'))
+    path('usuarios/',include('apps.usuarios.urls')),
+    path('carrera/',include('apps.carrera.urls')),
+    path('pilotokart/',include('apps.pilotokart.urls'))
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
