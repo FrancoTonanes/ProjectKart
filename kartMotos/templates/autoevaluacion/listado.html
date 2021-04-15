@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="container">
+
+	<h1 class="text-center justify-content-center p-3 text-white"> <strong>Resultado Autotest</strong> </h1>
+
+	<div class="row mt-2">
+
+		<div class="col-12 bg-white">
+
+			<br>
+
+			{% for p in object_list %}
+
+			<h3 style="background-color: #77c9e2" class="text-center p-5 text-white">Respuestas brindadas fecha:
+				<strong> {{p.fecha_test}} </strong></h3>
+			<table class="table border-3 border-top-3 border-bottom-5 table-secondary">
+				<thead>
+					<tr>
+
+						<th scope="col">#</th>
+						<th scope="col">Síntoma</th>
+						<th scope="col">Resultado</th>
+
+					</tr>
+
+				</thead>
+
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+
+						<td>Fiebre</td>
+
+						{% if p.fiebre %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">2</th>
+						<td>Tos</td>
+
+						{% if p.tos %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">3</th>
+						<td>Diarrea</td>
+
+						{% if p.diarrea %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">4</th>
+						<td>Dolor De Garganta</td>
+
+						{% if p.dolor_garganta %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">5</th>
+						<td>Dificultades Respiratorias</td>
+
+						{% if p.dificultad_respiratoria %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">6</th>
+						<td>Dolor Muscular</td>
+
+						{% if p.dolor_muscular %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">7</th>
+						<td>Cefalea</td>
+
+						{% if p.cefalea %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">8</th>
+						<td>Vomito</td>
+
+						{% if p.vomito %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+						<th scope="row">9</th>
+						<td>Pérdida Gusto U Olfato</td>
+
+						{% if p.gusto_olfato %}
+						    
+						<td>Positivo </td>
+						    
+						{% else %}
+						        
+						<td>Negativo </td>
+
+						{% endif %}
+
+					</tr>
+					<tr>
+
+				</tbody>
+			</table>
+
+			{% if p.resultado == "True" %}
+
+			    
+			<h4 class="text-right"> Por favor, concurrir a un médico previamente. Usted presenta síntomas.</h4>
+			    
+			{% else %}
+			        
+			<h4 class="text-right"> Usted no representa ningún riesgo.</h4>
+
+			<h4 class="text-right"> Puede proceder a obtener un turno en cualquier local. </h4>
+
+			<br>
+
+
+
+			{% endif %}
+
+			<hr style="border-color:grey;width:100%;line-height: 30px;">
+			<hr style="color: #0056b2;" size="50" />
+
+
+
+			{% endfor %}
+
+
+		</div>
+
+	</div>
+
+
+</div>
+
+
+{% endblock %}

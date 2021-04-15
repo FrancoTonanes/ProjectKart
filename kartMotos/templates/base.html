@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Turnos</title>
+	<!-- Boostrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<!-- Styles CSS -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	<!-- Scripts -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/28abe86f4b.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<!-- NAVBAR -->
+	<div class="container-fluid bg-light fixed-top border-white" style="border-style: none none solid none;">
+		<div class="header row">
+			<div class="col-4 d-flex justify-content-center">
+				<a class="navbar-brand mt-2" href="{% url 'home' %}">Carreras</a>
+			</div>
+
+			<div class="col-4 d-flex justify-content-center">
+				<nav class="navbar navbar-expand-sm">
+					<ul class="navbar-nav" style="font-size: 20px;">
+						<li class="nav-item pl-5 pr-5"><a href="{% url 'nosotros' %}">Nosotros</a></li>
+						<li class="nav-item pl-5 pr-5"><a href="{% url 'contacto' %}">Contacto</a></li>
+						<li class="nav-item pl-5 pr-5"><a href="{% url 'cuidados' %}">Cuidados</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- Dropdown -->
+			<div class="col-4 d-flex justify-content-center">
+				{% if user.is_authenticated %}
+				<nav class="navbar navbar-expand-sm">
+					<ul class="navbar-nav" style="font-size: 18px;">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle bg-light text-dark pl-3 pr-3" href="#" id="navbardrop"
+								data-toggle="dropdown" style="border-radius: 20px;">
+								{{user.username}}
+							</a>
+							<div class="dropdown-menu">
+								{% if user.es_admin == 0 %}
+								<a class="dropdown-item" href="{% url 'usuarios:modificar' user.DNI %}">Modificar
+									Cliente</a>
+								<a class="dropdown-item"
+									href="{% url 'autoevaluacion:crearFuncion'%}">Autoevaluacion</a>
+								<a class="dropdown-item" href="{% url 'autoevaluacion:listar' %}">Resultado
+									Autoevaluación</a>
+								{% endif %}
+
+								<form action="{% url 'logout' %}">
+									<button type="submit"
+										class="btn btn-light btn-sm align-self-center text-center">Cerrar
+										sesión</button>
+								</form>
+							</div>
+						</li>
+					</ul>
+				</nav>
+				{% else %}
+				<nav class="navbar navbar-expand-sm">
+					<ul class="navbar-nav" style="font-size: 18px;">
+						<li class="nav-item dropdown">
+							<a class="nav-link bg-light text-dark pl-3 pr-3" href="#" id="navbardrop"
+								data-toggle="dropdown" style="border-radius: 20px;">Invitado</a>
+						</li>
+					</ul>
+				</nav>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<!-- Bloques -->
+	<div class="container-fluid mt-5 pt-4">
+		{% block contenido %}
+
+		{% endblock %}
+	</div>
+</body>
+
+</html>
