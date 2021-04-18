@@ -11,3 +11,4 @@ class RegistrarCarreraKarting(CreateView):
 	form_class = CarreraKartingForm
 	template_name = 'carreras/registrar_carrera.html'
 	success_url = reverse_lazy('home')
+
