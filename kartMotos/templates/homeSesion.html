@@ -5,8 +5,7 @@
 	<div class="container d-flex flex-column align-items-center justify-content-center pt-5">
 		<h1 class="text-center text-white font-weight-bold" style="font-size: 50px;">Nombre de la asociación</h1>
 		<br>
-		<h4 class="text-center">Una plataforma que optimiza tu tiempo y el cuidado de los pilotos, proveyendo un fuerte
-			sistema de gestión de inscripciones</h4>
+		<h4 class="text-center">Plataforma oficial de inscripción a las carreras de kartings y motos</h4>
 	</div>
 
 	<div class="container d-flex flex-column pt-5" style="height:400px;">
@@ -16,20 +15,29 @@
 					style="mix-blend-mode: luminosity; opacity: 0.8; z-index: -1; position: absolute; height: 300px;">
 				<a href="#"
 					class="btn btn-danger btn-lg font-weight-bold position-absolute"
-					style="top: 200px; left: 380px; border-radius: 25px;">Inscribir</a>
+					style="top: 230px; left: 380px; border-radius: 25px;">Inscribir</a>
 			</div>
 			<div>	<a href="{% url 'carrera_karting:registrar_carrera' %}" class="btn btn-danger btn-lg font-weight-bold position-absolute"
-				style="top: 200px; left: 380px; border-radius: 25px;">Registrar Carrera</a>
+				style="top: 450px; left: 420px; border-radius: 25px;">Registrar Carrera</a>
+			</div>
+			<div>	<a href="{% url 'pilotokart:registrar_piloto_kart' %}" class="btn btn-danger btn-lg font-weight-bold position-absolute"
+					style="top: 450px; left: 700px; border-radius: 25px;">Registrar Piloto de Karting</a>
+			</div>
+			<div class="col-6 m-0 p-0">
+				<img src="/media/imagen_plan.png" class="img-fluid w-100" alt="" srcset=""
+					style="mix-blend-mode: luminosity; opacity: 0.8; z-index:-1; position: absolute; height: 300px;">
+				<a href="{% url 'pilotokart:listar_piloto_kart' %}" class="btn btn-light btn-lg font-weight-bold position-absolute"
+					style="top: 230px; left: 20px; border-radius: 25px;">Ver inscripciones</a>
 			</div>
 		
 		</div>
 	</div>
-	<div class="container d-flex flex-column pt-5" style="height:400px;">
+<!-- 	<div class="container d-flex flex-column pt-5" style="height:400px;">
 		<div class="row">
-			<div class="col-6 m-0 p-0">
+			<div class="col-8 m-0 p-0">
 
 				<div>	<a href="{% url 'pilotokart:registrar_piloto_kart' %}" class="btn btn-danger btn-lg font-weight-bold position-absolute"
-					style="top: 200px; left: 380px; border-radius: 25px;">Registrar Piloto de Karting</a>
+					style="top: 100px; left: 20px; border-radius: 25px;">Registrar Piloto de Karting</a>
 				</div>
 				<div class="col-6 m-0 p-0">
 					<img src="/media/imagen_plan.png" class="img-fluid w-100" alt="" srcset=""
@@ -40,9 +48,9 @@
 				</div>
 			</div>
 		</div>	
-	</div>
+	</div> -->
 
-	<div class="container d-flex flex-column align-items-center justify-content-center pt-5">
+	<!-- <div class="container d-flex flex-column align-items-center justify-content-center pt-5">
 		<h2 class="text-center text-white font-weight-bold" style="font-size: 36px;">FUNCIONAMIENTO Y SERVICIOS</h2>
 	</div>
 
@@ -85,7 +93,7 @@
 			<div class="col"><img src="/media/flechanegra 2.png" alt="" srcset=""></div>
 			<div class="col"><img src="/media/mujer 1.png" alt="" srcset=""></div>
 		</div>
-	</div>
+	</div> -->
 </div>
 
 {% endblock %}
