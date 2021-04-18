@@ -1,4 +1,5 @@
 from django.db import models
+from apps.carreraKarting.models import CarreraKarting
 
 
 # Create your models here.
@@ -28,7 +29,7 @@ class PilotoKart(models.Model):
     telefono = models.BigIntegerField(null = True,blank=True)
     numero_kart = models.BigIntegerField()
     categoria = models.CharField(max_length=1,choices= OpcionCategoria)
-    #carrera_piloto = models.ForeignKey(Carrera, null=True, related_name = 'piloto_carrera', on_delete = models.SET_NULL)
+    carrera = models.ForeignKey(CarreraKarting, null=True, related_name = 'piloto_carrera', on_delete = models.SET_NULL)
     #fecha_inscripcion = models.DateField()
 
 

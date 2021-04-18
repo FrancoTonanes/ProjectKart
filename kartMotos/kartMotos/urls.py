@@ -20,7 +20,7 @@ urlpatterns = [
 
     #Url de las apps
     path('usuarios/',include('apps.usuarios.urls')),
-    path('carrera/',include('apps.carrera.urls')),
+    path('carreraKarting/',include('apps.carreraKarting.urls')),
     path('pilotokart/',include('apps.pilotokart.urls'))
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

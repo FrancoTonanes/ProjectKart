@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.usuarios',
-    'apps.carrera',
+    'apps.carreraKarting',
     'apps.pilotokart',
     'crispy_forms',
     'jquery',
