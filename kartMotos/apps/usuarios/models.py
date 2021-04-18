@@ -6,7 +6,8 @@ from django.contrib.auth.models import AbstractUser
 class Usuario(AbstractUser):
 	#DNI = models.PositiveIntegerField(serialize = False, verbose_name = 'DNI', null=True)
 #	fecha_nacimiento = models.DateField('Fecha de Nacimiento(DD/MM/AAAA)',null=True)
-	email = models.EmailField('Email', unique=True, primary_key = True)
+	username = models.CharField(max_length = 50, null=True, blank=True)
+	email = models.EmailField('Email', unique=True)
 	USERNAME_FIELD = 'email'
 	REQUIRED_FIELDS = ['username']
 	is_admin = models.BooleanField(default=False,null=False, blank=True)
